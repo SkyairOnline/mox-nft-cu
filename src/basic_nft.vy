@@ -18,7 +18,7 @@ exports: erc721.__interface__
 # State Variables
 NAME: constant(String[25]) = "Puppy NFT"
 SYMBOL: constant(String[5]) = "PNFT"
-BASE_URI: public(constant(String[7])) = "ipfs://"
+BASE_URI: constant(String[7]) = "ipfs://"
 EIP_712_VERSION: constant(String[1]) = "1"
 
 # Function
@@ -34,3 +34,7 @@ def mint(uri: String[432]):
     erc721._safe_mint(msg.sender, token_id, b"")
     erc721._set_token_uri(token_id, uri)
 
+@external
+@view
+def get_base_uri() -> String[7]:
+    return BASE_URI

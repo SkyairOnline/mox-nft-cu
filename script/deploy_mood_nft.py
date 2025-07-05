@@ -4,7 +4,7 @@ from moccasin.boa_tools import VyperContract
 
 PUG_URI = "QmW16U98JrY9HBY36rQtUuUtDnm6LdEeNdAAggmrx3thMa"
 
-def deploy_mood() -> VyperContract:
+def deploy_mood_nft() -> VyperContract:
     happy_svg_uri = ""
     sad_svg_uri = ""
     with open("./images/happy.svg", "r") as f:
@@ -19,7 +19,7 @@ def deploy_mood() -> VyperContract:
     return mood_contract
 
 def moccasin_main():
-    return deploy_mood()
+    return deploy_mood_nft()
 
 def svg_to_base64_uri(svg):
     svg_bytes = svg.encode('utf-8')
